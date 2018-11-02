@@ -19,17 +19,17 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "run",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "hurt",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [node name="Player" type="Area2D" index="0"]
