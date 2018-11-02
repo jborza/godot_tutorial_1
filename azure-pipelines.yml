@@ -13,7 +13,8 @@ steps:
     wget --quiet https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
     wget --quiet https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz
     unzip Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
-    mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
+    sudo mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
+    sudo chmod +x /usr/local/bin/godot
     unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz
     mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION} 
     mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}
@@ -21,6 +22,8 @@ steps:
   displayName: 'Prepare Godot headless'
 
 - bash: |
+    pwd
+    ls
     godot --quit --export "HTML5" --verbose /tmp/export
 
   displayName: 'Godot export'
