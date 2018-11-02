@@ -41,9 +41,6 @@ func get_input():
 		$AnimatedSprite.animation = "idle"
 		
 func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 	get_input()
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screensize.x)
@@ -53,8 +50,11 @@ func _process(delta):
 func _on_Player_area_entered(area):
 	if area.is_in_group("coins"):
 		area.pickup()
-		emit_signal("pickup")
+		emit_signal("pickup","coin")
 	if area.is_in_group("obstacles"):
 		emit_signal("hurt")
 		die()
+	if area.is_in_group("powerups"):
+		area.pickup()
+		emit_signal("pickup","powerup")
 	
