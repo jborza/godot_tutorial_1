@@ -7,8 +7,6 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - bash: |
     export GODOT_VERSION="3.0.6"
@@ -24,5 +22,5 @@ steps:
 
 - bash: |
     godot --quit --export "HTML5" --verbose /tmp/export
-    
+
   displayName: 'Godot export'
