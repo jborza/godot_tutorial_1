@@ -6,7 +6,8 @@ path="res://.import/coin-frame-1.png-14812b11d02731ef2274dcac2c2d00c3.stex"
 
 [deps]
 
-source_md5="f4c80097b7811f0fb8b51086607bb88b"
+source_file="res://assets/coin/coin-frame-1.png"
+dest_files=[ "res://.import/coin-frame-1.png-14812b11d02731ef2274dcac2c2d00c3.stex" ]
 
 [params]
 

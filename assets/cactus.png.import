@@ -2,11 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/single_cactus_game_ornament.png-d2317170f3bb37efcf594a044c5cf50e.stex"
+path="res://.import/cactus.png-366c3b67d0b3dfc72dbc4a57fb23b7b9.stex"
 
 [deps]
 
-source_md5="dcb3315b46736e4992b180b5e51fae2e"
+source_file="res://assets/cactus.png"
+dest_files=[ "res://.import/cactus.png-366c3b67d0b3dfc72dbc4a57fb23b7b9.stex" ]
 
 [params]
 

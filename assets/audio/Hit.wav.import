@@ -6,7 +6,8 @@ path="res://.import/Hit.wav-22c6b2c2eb812f0866a6ffdc15cb8485.sample"
 
 [deps]
 
-source_md5="e400893f7779cc4045e4fcee62f97571"
+source_file="res://assets/audio/Hit.wav"
+dest_files=[ "res://.import/Hit.wav-22c6b2c2eb812f0866a6ffdc15cb8485.sample" ]
 
 [params]
 

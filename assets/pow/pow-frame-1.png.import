@@ -7,10 +7,7 @@ path="res://.import/pow-frame-1.png-a953ec1531cfa284e324f17375f9827c.stex"
 [deps]
 
 source_file="res://assets/pow/pow-frame-1.png"
-source_md5="2af25eab865b70d823c997b962f766f6"
-
 dest_files=[ "res://.import/pow-frame-1.png-a953ec1531cfa284e324f17375f9827c.stex" ]
-dest_md5="9b5bd830f4b4c10b6a87b86a50aa5a99"
 
 [params]
 

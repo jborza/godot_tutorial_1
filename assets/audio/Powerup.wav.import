@@ -7,10 +7,7 @@ path="res://.import/Powerup.wav-b03c12bdb81248d2232876772fc6dd50.sample"
 [deps]
 
 source_file="res://assets/audio/Powerup.wav"
-source_md5="f8e754d682f61fa638abf0c685b6350e"
-
 dest_files=[ "res://.import/Powerup.wav-b03c12bdb81248d2232876772fc6dd50.sample" ]
-dest_md5="a76b8ca2c420bcdefc9d865693b1d5fa"
 
 [params]
 
