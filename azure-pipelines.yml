@@ -23,6 +23,6 @@ steps:
 
 - bash: |
     mkdir build
-    godot --quit --export "HTML5" --verbose build/export
+    sudo godot --quit --export "HTML5" --verbose export
 
   displayName: 'Godot export'
