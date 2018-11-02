@@ -50,7 +50,10 @@ func _process(delta):
 
 func _on_GameTimer_timeout():
 	time_left -= 1
-	$HUD.update_timer(time_left)
+	if(time_left == 0):
+		game_over()
+	else:
+		$HUD.update_timer(time_left)
 
 
 func _on_Player_pickup(type):
@@ -77,12 +80,7 @@ func game_over():
 	$EndSound.play()
 	
 func random_position():	
-	return Vector2(rand_range(0,screensize.x), 
-							rand_range(0,screensize.y))
-	
-	
-	
-
+	return Vector2(rand_range(0,screensize.x), rand_range(0,screensize.y))
 
 func _on_HUD_start_game():
 	new_game()

@@ -5,9 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 215.536, 300.039 )
+extents = Vector2( 42.5823, 60.721 )
 
-[node name="Cactus" type="Area2D" index="0" groups=[
+[node name="Cactus" type="Area2D" groups=[
 "obstacles",
 ]]
 
@@ -25,6 +25,8 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 

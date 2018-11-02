@@ -27,7 +27,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 24.8796
 
-[node name="Powerup" type="Area2D" groups=[
+[node name="Powerup" type="Area2D" index="0" groups=[
 "powerups",
 ]]
 
@@ -45,7 +45,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 6
+frame = 9
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -69,6 +69,8 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 script = ExtResource( 12 )
+
+[connection signal="area_entered" from="." to="." method="_on_Powerup_area_entered"]
 
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 

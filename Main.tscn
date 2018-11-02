@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/audio/Level.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/audio/Hit.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/audio/Coin.wav" type="AudioStream" id=10]
+[ext_resource path="res://Cactus.tscn" type="PackedScene" id=11]
 
 [node name="Main" type="Node" index="0"]
 
@@ -94,6 +95,10 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="Cactus" parent="." index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 92.0392, 114.031 )
 
 [connection signal="hurt" from="Player" to="." method="_on_Player_hurt"]
 
