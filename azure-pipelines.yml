@@ -10,11 +10,14 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    ENV GODOT_VERSION "3.0.6"
+- bash: |
+    export GODOT_VERSION="3.0.6"
     wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
     wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz
     unzip Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    RUN mv Godot_v${GODOT_VERSION}-stable_linux_headless.64 /usr/local/bin/godot
+    unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz
+    mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION} 
+    mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}
+    rm -f Godot_v${GODOT_VERSION}-stable_export_templates.tpz Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
+ displayName: 'Godot export'
