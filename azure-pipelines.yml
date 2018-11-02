@@ -22,8 +22,7 @@ steps:
   displayName: 'Prepare Godot headless'
 
 - bash: |
-    pwd
-    ls
-    godot --quit --export "HTML5" --verbose /tmp/export
+    mkdir build
+    godot --quit --export "HTML5" --verbose build/export
 
   displayName: 'Godot export'
