@@ -39,13 +39,14 @@ func spawn_coins():
 		c.screensize = screensize
 		c.position = random_position()
 	$LevelSound.play()
-		
 
 func _process(delta):
 	if playing and $CoinContainer.get_child_count() == 0:
 		level += 1
 		time_left += 10
 		spawn_coins()
+		$PowerupTimer.wait_time = rand_range(5,10)
+		$PowerupTimer.start()
 
 func _on_GameTimer_timeout():
 	time_left -= 1
@@ -90,5 +91,5 @@ func _on_HUD_start_game():
 func _on_PowerupTimer_timeout():
 	var p = Powerup.instance()
 	add_child(p)
-	p.screensize = screensize()
+	p.screensize = screensize
 	p.position = random_position()

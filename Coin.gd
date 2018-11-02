@@ -5,10 +5,6 @@ var screensize = Vector2()
 func pickup():
 	monitoring = false
 	$Tween.start()
-	#queue_free()
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -16,13 +12,15 @@ func _ready():
 	$Tween.interpolate_property($AnimatedSprite, "modulate",
 		Color(1,1,1,1), Color(1,1,1,0), 0.3,
 		Tween.TRANS_QUAD,
-		Tween.EASE_IN_OUT)
-		
+		Tween.EASE_IN_OUT)		
 	
 	$Tween.interpolate_property($AnimatedSprite, "scale", 
 		$AnimatedSprite.scale, $AnimatedSprite.scale * 3.0, 0.3,
 		Tween.TRANS_QUAD, 
 		Tween.EASE_IN_OUT)
+		
+	$Timer.wait_time = rand_range(0, 3)
+	$Timer.start()
 	
 	
 #func _process(delta):
@@ -33,3 +31,8 @@ func _ready():
 
 func _on_Tween_tween_completed(object, key):
 	queue_free()
+
+
+func _on_Timer_timeout():
+	$AnimatedSprite.frame = 0
+	$AnimatedSprite.play()
