@@ -38,6 +38,7 @@ func spawn_coins():
 		c.screensize = screensize
 		c.position = Vector2(rand_range(0,screensize.x), 
 							rand_range(0,screensize.y))
+	$LevelSound.play()
 		
 
 func _process(delta):
@@ -45,10 +46,6 @@ func _process(delta):
 		level += 1
 		time_left += 10
 		spawn_coins()
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
 
 func _on_GameTimer_timeout():
 	time_left -= 1
@@ -58,8 +55,7 @@ func _on_GameTimer_timeout():
 func _on_Player_pickup():
 	score += 1
 	$HUD.update_score(score)
-	
-
+	$CoinSound.play()
 
 func _on_Player_hurt():
 	game_over()
@@ -71,6 +67,7 @@ func game_over():
 		coin.queue_free()
 	$HUD.show_game_over()
 	$Player.die()
+	$EndSound.play()
 	
 	
 	
