@@ -32,5 +32,10 @@ steps:
 - bash: |
     mkdir build
     sudo godot --quit --export "HTML5" --verbose export
-
   displayName: 'Godot export'
+
+- task: PublishBuildArtifacts@1
+    #pathToPublish: $(Build.ArtifactStagingDirectory)
+    pathToPublish: $(Build.SourcesDirectory)
+    artifactName: 'drop' 
+  displayName: "Publish Artifacts"
