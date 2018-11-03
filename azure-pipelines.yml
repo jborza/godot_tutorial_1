@@ -35,7 +35,9 @@ steps:
   displayName: 'Godot export'
 
 - task: PublishBuildArtifacts@1
-    #pathToPublish: $(Build.ArtifactStagingDirectory)
-    pathToPublish: $(Build.SourcesDirectory)
-    artifactName: 'drop' 
   displayName: "Publish Artifacts"
+    inputs:
+      #pathToPublish: $(Build.ArtifactStagingDirectory)
+      pathToPublish: $(Build.SourcesDirectory)
+      artifactName: 'drop' 
+  
