@@ -17,6 +17,9 @@ steps:
     sudo chmod +x /usr/local/bin/godot
     unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz
     mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION} 
+    #godot cache and config folder
+    mkdir -p ~/.config/godot
+    mkdir -p ~/.cache
     mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}
     rm -f Godot_v${GODOT_VERSION}-stable_export_templates.tpz Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
   displayName: 'Prepare Godot headless'
