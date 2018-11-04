@@ -36,7 +36,7 @@ steps:
 
 - bash: |
     mkdir artifact-windows
-    godot --quit --export "Windows " --verbose artifact-windows/game.exe
+    sudo godot --quit --export "Windows " --verbose artifact-windows/game.exe
   displayName: 'Godot export Windows'
   
 - task: PublishBuildArtifacts@1
