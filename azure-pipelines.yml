@@ -30,14 +30,24 @@ steps:
   displayName: 'Prepare Godot headless'
 
 - bash: |
-    mkdir artifact
-    sudo godot --quit --export "HTML5" --verbose artifact/export
-  displayName: 'Godot export'
+    mkdir artifact-html5
+    sudo godot --quit --export "HTML5" --verbose artifact-html5/index.html
+  displayName: 'Godot export HTML5'
 
+- bash: |
+    mkdir artifact-windows
+    godot --quit --export "Windows " --verbose artifact-windows/game.exe
+  displayName: 'Godot export Windows'
+  
 - task: PublishBuildArtifacts@1
-  displayName: "Publish Artifacts"
+  displayName: "Publish HTML5 build"
   inputs:
     #pathToPublish: $(Build.ArtifactStagingDirectory)
-    pathToPublish: $(Build.SourcesDirectory)/artifact
-    artifactName: 'drop' 
-  
+    pathToPublish: $(Build.SourcesDirectory)/artifact-html5
+    artifactName: 'html-export' 
+
+- task: PublishBuildArtifacts@1
+  displayName: "Publish Windows build"
+  inputs:
+    pathToPublish: $(Build.SourcesDirectory)/artifact-windows
+    artifactName: 'windows-export' 
